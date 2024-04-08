@@ -42,8 +42,8 @@ const processStripePayment = async (paymentData) => {
         },
       ],
       mode: 'payment',
-      success_url: 'http://localhost:3000/success',
-      cancel_url: 'http://localhost:3000/cancel',
+      success_url: 'https://ngh1.org/success',
+      cancel_url: 'https://ngh1.org/cancel',
     });
     return session;
   } catch (error) {
@@ -96,8 +96,8 @@ const processStripeSubscription = async (subsciptionData) => {
         },
       ],
       mode: 'subscription',
-      success_url: 'http://localhost:3000/success',
-      cancel_url: 'http://localhost:3000/cancel',
+      success_url: 'https://ngh1.org/success',
+      cancel_url: 'https://ngh1.org/cancel',
     });
     return session;
   } catch (error) {
