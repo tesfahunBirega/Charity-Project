@@ -3,13 +3,13 @@ const Joi = require('joi');
 const createUser = {
   body: Joi.object()
     .keys({
-      fullName: Joi.string(),
+      fullName: Joi.string().required(),
       phone: Joi.string(),
-      email: Joi.string(),
-      password: Joi.string(),
+      email: Joi.string().email().required(),
+      password: Joi.string().required(),
       role: Joi.string(),
-      country: Joi.string(),
-      volenteerTypeId: Joi.string(),
+      country: Joi.string().allow('').optional(),
+      volenteerTypeId: Joi.string().allow('').optional(), // Making volenteerTypeId optional
       image: Joi.string(),
     })
     .unknown(true)
