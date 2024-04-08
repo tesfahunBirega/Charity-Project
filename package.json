@@ -1,5 +1,5 @@
 {
-  "name": "Heineken API",
+  "name": "nohapp",
   "version": "1.0.0",
   "description": "API for Heineken-Training-App",
   "bin": "bin/createNodejsApp.js",
