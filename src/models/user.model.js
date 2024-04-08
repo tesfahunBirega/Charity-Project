@@ -11,7 +11,7 @@ class User extends Base {
     this.password = { type: 'varchar', nullable: true }; // Set nullable to true to indicate that password is not required
     this.role = { type: 'varchar' };
     this.country = { type: 'varchar' };
-    this.resetToken = { type: 'varchar' };
+    this.resetToken = { type: 'varchar', nullable: true };
     this.volenteerTypeId = { type: 'varchar' };
   }
 }
