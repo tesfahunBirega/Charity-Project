@@ -82,11 +82,19 @@ const updatePost = async (req, res) => {
     const getPost = await postService.getPostById(req.params.postId);
     const { name, description } = req.body;
     const imagePath = req.file ? req.file.filename : getPost.image;
-
+    const imageUrl = `${req.protocol}://${req.get('host')}/v1/public/${imagePath}`;
     const update = await postService.updatePostById(postId, { name, description, image: imagePath });
+    const post = await postService.getPostById(req.params.postId);
+
     res.status(200).json({
       status: 'Success',
-      update: update,
+      update: {
+        id: post.id,
+        name: post.name,
+        createdAt: post.createdAt,
+        description: post.description,
+        imageUrl: imageUrl,
+      },
     });
   } catch (error) {
     res.status(500).json({
@@ -95,7 +103,6 @@ const updatePost = async (req, res) => {
     });
   }
 };
-
 module.exports = {
   createPost,
   getAllPosts,

@@ -100,14 +100,30 @@ const deleteUser = catchAsync(async (req, res) => {
   res.send(user);
 });
 
+// const findRole = catchAsync(async (req, res) => {
+//   const users = await userService.findRole();
+//   const usersWithImageUrl = users.map((user) => {
+//     const imageUrl = `${req.protocol}://${req.get('host')}/v1/public/${user.image}`;
+//     return {
+//       id: user.id,
+//       fullName: user.createdAt,
+//       email: user.name,
+//       role: user.role,
+//       phone: user.phone,
+//       createdAt: user.createdAt,
+//       imageUrl: imageUrl,
+//     };
+//   });
+//   res.send(usersWithImageUrl);
+// });
 const findRole = catchAsync(async (req, res) => {
   const users = await userService.findRole();
   const usersWithImageUrl = users.map((user) => {
     const imageUrl = `${req.protocol}://${req.get('host')}/v1/public/${user.image}`;
     return {
       id: user.id,
-      fullName: user.createdAt,
-      email: user.name,
+      fullName: user.fullName,
+      email: user.email,
       role: user.role,
       phone: user.phone,
       createdAt: user.createdAt,
