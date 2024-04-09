@@ -57,19 +57,25 @@ const processStripeSubscription = async (subsciptionData) => {
     const amount = subsciptionData.subscription_ammount * 100;
     switch (amount) {
       case 5000:
-        priceID = 'price_1Ow0n7HGaAONVQkK8L1WEZf8';
+        priceID = 'price_1P3faiHGaAONVQkKPYKioXCc';
         break;
       case 10000:
-        priceID = 'price_1Ow1ntHGaAONVQkKtWwnXn66';
+        priceID = 'price_1P3fdMHGaAONVQkKFIHtlTAE';
         break;
       case 20000:
-        priceID = 'price_1Ow1ntHGaAONVQkKLUhWUPTa';
+        priceID = 'price_1P3fddHGaAONVQkKLPqbsqx';
         break;
       case 25000:
-        priceID = 'price_1Ow1ntHGaAONVQkKRiGUtGkA';
+        priceID = 'price_1P3fdsHGaAONVQkKx3FGbFkc';
+        break;
+      case 30000:
+        priceID = 'price_1P3ferHGaAONVQkK3TPgiWfL';
+        break;
+      case 40000:
+        priceID = 'price_1P3ferHGaAONVQkK3TPgiWfL';
         break;
       case 50000:
-        priceID = 'price_1Ow1ntHGaAONVQkKEuRJ3OE7';
+        priceID = 'price_1P3fe7HGaAONVQkKKP8n8f3G';
         break;
       default:
         try {
