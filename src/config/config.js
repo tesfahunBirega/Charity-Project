@@ -18,6 +18,7 @@ const envVarsSchema = Joi.object()
     JWT_SECRET: Joi.string().required().description('JWT secret is required'),
     MAILCHIMP_API_KEY: Joi.required().description('MAILCHIMP_API_KEY required'),
     MAILCHIMP_SERVER_PREFIX: Joi.required().description('MAILCHIMP_SERVER_PREFIX required'),
+    STRIPE_API_KEY: Joi.required.description('Stripe API key required'),
     // Add more MySQL specific configuration if needed
   })
   .unknown();
@@ -34,6 +35,7 @@ module.exports = {
   MAILCHIMP_API_KEY: envVars.MAILCHIMP_API_KEY,
   env: envVars.NODE_ENV,
   port: envVars.PORT,
+  STRIPE_API_KEY: envVars.STRIPE_API_KEY,
   email: {
     smtp: true,
   },
