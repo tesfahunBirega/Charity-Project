@@ -20,8 +20,8 @@ module.exports = {
     connectionLimit: configs.postgres.maxConn,
     idleTimeoutMillis: configs.postgres.idleTimeOut,
     connectionTimeoutMillis: configs.postgres.connTimeOut,
-    // ssl: {
-    //   rejectUnauthorized: false, // Disable SSL certificate validation
-    // },
+    ssl: {
+      rejectUnauthorized: false, // Disable SSL certificate validation
+    },
   },
 };
