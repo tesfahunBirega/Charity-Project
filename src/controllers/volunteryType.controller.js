@@ -1,6 +1,7 @@
 const httpStatus = require('http-status');
 const catchAsync = require('../utils/catchAsync');
 const { volunteryService } = require('../services');
+const ApiError = require('../utils/ApiError');
 
 const createVoluntery = catchAsync(async (req, res) => {
   try {

@@ -8,8 +8,8 @@ class FeedBack extends Base {
     this.name = { type: 'varchar' };
     this.email = { type: 'varchar' };
     this.message = { type: 'varchar' };
-    this.is_seen = { type: Boolean };
-    this.role = { type: 'varchar' };
+    this.is_seen = { type: Boolean, nullable: true };
+    this.role = { type: 'varchar', nullable: true };
   }
 }
 

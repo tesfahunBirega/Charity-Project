@@ -80,12 +80,9 @@ const getEvent = catchAsync(async (req, res) => {
 });
 
 const updateEvent = catchAsync(async (req, res) => {
-  if (req.file) {
-    const image = req.file.filename;
-    req.body = image;
-  } else {
-    const result = await eventService.getEventById(req.params.eventId);
-  }
+  const eventId = req.params.eventId;
+  const events = await eventService.getEventById(eventId);
+  console.log(events, 'evemttt');
   const event = await eventService.updateEventById(req.params.eventId, req.body);
   const imageUrl = `${req.protocol}://${req.get('host')}/v1/public/${event.image}`;
   event.imageUrl = imageUrl;

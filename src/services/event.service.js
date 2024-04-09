@@ -28,7 +28,9 @@ const queryEvents = async () => {
 };
 
 const getEventById = async (id) => {
-  const result = await eventRepository.findOne({ where: { id } });
+  console.log(id, 'iddd');
+  const result = await eventRepository.findOneBy({ id });
+  console.log(result, 'hellooo');
   return result;
 };
 
