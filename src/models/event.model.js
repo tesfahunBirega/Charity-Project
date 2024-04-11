@@ -13,7 +13,7 @@ class Event extends Base {
     this.description = { type: 'varchar' };
     // this.date = { type: 'datetime' };
     this.charityAddress = { type: 'varchar' };
-    this.isActive = { type: 'boolean', default: true, nullable: false };
+    this.isActive = { type: 'boolean', default: true, nullable: true };
   }
 }
 
