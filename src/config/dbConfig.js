@@ -10,6 +10,7 @@ module.exports = {
   password: configs.postgres.password,
   database: configs.postgres.database,
   entities: [User, UserProfile, userAdmin, Event, FeedBack, Donation, Post, Voluntery],
+
   synchronize: true,
   migrations: [path.join(__dirname, '../migrations/*.js')],
   cli: {
