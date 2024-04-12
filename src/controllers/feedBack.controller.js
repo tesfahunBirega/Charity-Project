@@ -6,9 +6,9 @@ const { feedBackService, userService } = require('../services');
 
 const createFeedback = catchAsync(async (req, res) => {
   try {
-    const { name, email, message } = req.body;
+    const { name, email, message, is_seen } = req.body;
 
-    const user = await feedBackService.createfeedback({ name, email, message });
+    const user = await feedBackService.createfeedback({ name, email, message, is_seen });
 
     res.status(httpStatus.CREATED).send(user);
   } catch (error) {

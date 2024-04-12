@@ -55,7 +55,7 @@ const getEvents = catchAsync(async (req, res) => {
         event_time: event.event_time,
         event_price: event.event_price,
         charityAddress: event.charityAddress,
-        isActive: event.isActive,
+        isActive: event.isActive === 1 ? true : false,
         imageUrl: imageUrl,
       };
     });
